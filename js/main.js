@@ -1,7 +1,7 @@
     function getMovies(imdbID)
     {
     
-        axios.get('http://www.omdbapi.com/?s=harry%20potter&apikey=e0620bd4&page=1' +imdbID)
+        axios.get('https://www.omdbapi.com/?s=harry%20potter&apikey=e0620bd4&page=1' +imdbID)
         .then((response) => {
             console.log(response);
             let movies = response.data.Search;
@@ -40,7 +40,7 @@ function getMovie()
 {
     let movieId=sessionStorage.getItem('movieId');
 
-    axios.get('http://www.omdbapi.com/?i=tt1201607&apikey=e0620bd4&page=1' +movieId)
+    axios.get('https://www.omdbapi.com/?i=tt1201607&apikey=e0620bd4&page=1' +movieId)
         .then((response) => {
             console.log(response);
             let movie = response.data;
