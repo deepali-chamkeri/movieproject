@@ -1,7 +1,7 @@
     function getMovies(imdbID)
     {
     
-        axios.get('https://www.omdbapi.com/?s=harry%20potter&apikey=e0620bd4&page=1' +imdbID)
+        axios.get('http://www.omdbapi.com/?s=harry%20potter&apikey=e0620bd4&page=1' +imdbID)
         .then((response) => {
             console.log(response);
             let movies = response.data.Search;
@@ -39,8 +39,10 @@ function movieSelected(id)
 function getMovie()
 {
     let movieId=sessionStorage.getItem('movieId');
-    axios.get('https://www.omdbapi.com/?apikey=e0620bd4&i='+ movieId)
-      .then((response) => {
+
+         axios.get('https://www.omdbapi.com/?apikey=e0620bd4&i='+ movieId)
+
+        .then((response) => {
             console.log(response);
             let movie = response.data;
             let output =`
@@ -54,7 +56,7 @@ function getMovie()
             <li class="list-group-item"><strong>Genre:</strong>${movie.Genre}</li>
             <li class="list-group-item"><strong>Released:</strong>${movie.Released}</li>
             <li class="list-group-item"><strong>Rated:</strong>${movie.Rated}</li>
-            <li class="list-group-item"><strong>IMDB Rating:</strong>${movie.IMDBRating}</li>
+            <li class="list-group-item"><strong>IMDB Rating:</strong>${movie.imdbRating}</li>
             <li class="list-group-item"><strong>Director:</strong>${movie.Director}</li>
             <li class="list-group-item"><strong>Writer:</strong>${movie.Writer}</li>
             <li class="list-group-item"><strong>Actors:</strong>${movie.Actors}</li>
